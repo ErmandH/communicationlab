@@ -63,6 +63,17 @@ Rs_bp = 40;
 
 hold on
 plot(f, abs(fftshift(H1_bp)), "g")
+xlabel("frenaks (Hz)")
+ylabel("Genlik")
+legend("|S(f)|", "LPF", "BPF", "Location","northeastoutside")
 
 
+s1_hat = filter(b1, a1, s);
+figure;
+plot(t,s,t,s1_hat)
+xlim([0 0.2])
 
+s2_hat = filter(b1_bp, a1_bp, s);
+figure
+plot(t,s, t, s2_hat)
+xlim([0 0.2])
