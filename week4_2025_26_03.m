@@ -277,3 +277,5 @@ xlim([0.05 0.3])
 xlabel("Zaman (s)")
 ylabel("Genlik")
 legend("Mesaj İşareti", "Filtrelenmiş İşaret", "NumColumns", 2)
+
+%% x - mean(x) = DC silme
