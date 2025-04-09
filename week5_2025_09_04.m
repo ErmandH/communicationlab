@@ -58,7 +58,7 @@ f_am = f_am - mean(f_am); % demodüle edilmiş final işareti
 figure;
 subplot 211
 plot(t, f_am_copy)
-title("|Fam(f)|") ; xlabel("f (Hz)"); ylabel("Genlik")
+title("fam(t)") ; xlabel("t (s)"); ylabel("Genlik")
 
 subplot 212
 plot(t, m)
