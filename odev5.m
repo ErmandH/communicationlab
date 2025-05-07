@@ -37,9 +37,9 @@ plot(t, s_pm)
 title("s_pm(t)"); xlabel("t"); ylabel("Genlik")
 
 %% Figure-2
-S_PM = fftshift(fft(s_pm)) / length(s_pm);
-Z1 = fftshift(fft(z1)) / length(z1);
-Z2 = fftshift(fft(z2)) / length(z2);
+S_PM = abs(fftshift(fft(s_pm))) / length(s_pm);
+Z1 = abs(fftshift(fft(z1))) / length(z1);
+Z2 = abs(fftshift(fft(z2))) / length(z2);
 
 figure;
 subplot 311
