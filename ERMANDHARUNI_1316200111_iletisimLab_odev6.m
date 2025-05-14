@@ -1,14 +1,17 @@
 clc;clear;close all;
 Ac=1;Am=1;
-fm = 10;fc = 200; fs=1000;kf=50;
+fm = 10;fc = 200; fs=5000;kf=80*2*pi;
 ts = 1/fs;
 t = 0:ts:1-ts;
-
+% mesaj işareti
 m = Am*cos(2*pi*fm*t);
+% taşıyıcı
 c = Ac*cos(2*pi*fc*t);
 
+% mesajın integrali
 integral_m = cumsum(m) * ts;
 
+% frekans modüleli işaret
 s_fm = Ac*cos(2*pi*fc*t + kf * integral_m);
 
 
@@ -22,6 +25,8 @@ z2 = z1 .* exp(-1j* 2 * pi*fc*t);
 z2_faz = phase(z2);
 
 z2_turev = diff(z2_faz) * fs;
+
+% demodüleli işaret
 m_hat = z2_turev / kf;
 %% Figure-1
 figure;
@@ -68,7 +73,7 @@ grid on
 plot(t, m)
 xlabel("t (sn)"); ylabel("Genlik")
 hold on
-plot(t_hat, m_hat, "LineWidth",2)
+plot(t_hat, m_hat)
 legend("Mesaj İşareti", "Demodüle İşaret", "NumColumns", 2)
 
 
