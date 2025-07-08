@@ -1,0 +1,7 @@
+Merhaba arkadaşlar,
+Final ve Bütünleme sınavlarında, programlarınızı Octave üzerinden yazacaksınız. 
+Mevcut programlar küçük değişikliklerle çalışıyor. Değişiklik yapılan bazı dosyaları, Dosyalar/Octave klasöründen indirebilirsiniz.
+Uyumsuzlukları özetlemek gerekirse:
+1) "subplot 211" tarzında çalışmıyor. "subplot(2, 1, 1)" şeklinde yazılmalıdır.
+2) "hilbert" ve filtre tasarım komutları direkt çalışmıyor. signal toolbox kurulu, ama önce yüklemeniz gerekli diye uyarı veriyor. Bunun için "pkg load signal" kodunu "clc, clear, close all" satırından hemen sonra yazmalısınız.
+3) "phase" komutu tanınmıyor. "unwrap(angle(x))" komutunu kullanabilirsiniz.
